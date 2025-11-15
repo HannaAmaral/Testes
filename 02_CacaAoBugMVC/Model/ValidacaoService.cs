@@ -30,7 +30,7 @@ namespace _02_CacaAoBugMVC.Model
             }
             if (!Regex.IsMatch(nome.Trim(), padraoNome))
             {
-                mensagemErro = " - Minimo de 3 caracteres\n- Não pode ter 3 letras iguais consecutivas\n- Não pode ter duplo espaço"
+                mensagemErro = "- Minimo de 3 caracteres\n- Não pode ter 3 letras iguais consecutivas\n- Não pode ter duplo espaço";
                 return false;
             }
             return true;
@@ -45,11 +45,9 @@ namespace _02_CacaAoBugMVC.Model
             
             if (!Regex.IsMatch(notaDecimalVirgula, padraoNota)) return false;
             
-            if (!double.TryParse(notaDecimalVirgula, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out nota))
+            if (double.TryParse(notaDecimalVirgula, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out nota))
             {
-                if(nota < 0 || nota > 10)
-                    return false;
-                else
+                if(nota < 0 || nota > 10) return false;
                     return true;
             }
             return false;

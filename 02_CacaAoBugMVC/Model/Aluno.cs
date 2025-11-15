@@ -1,6 +1,6 @@
 ﻿namespace _02_CacaAoBugMVC.Model
 {
-    class Aluno
+    public class Aluno
     {
         /*private string nome = string.Empty;
         
@@ -13,10 +13,11 @@
         {
             this.nome = nome;
         }*/
-        public string nome { get; set; } = string.Empty;
-        public double nota1 { get; set; }
-        public double nota2 { get; set; }
-        public double nota3 { get; set; }
-        public string situacao { get; set; } = string.Empty;
+        public string Nome { get; set; } = string.Empty;
+        public double Nota1 { get; set; }
+        public double Nota2 { get; set; }
+        public double Nota3 { get; set; }
+        public double Media { get; set; }
+        public string Situacao { get; set; } = string.Empty;
     }
 }
